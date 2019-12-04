@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 4em;
 }
 
 .App-logo {
@@ -19,4 +20,9 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.error {
+  border: 1px solid red;
+  outline: 3px solid plum;
 }
