@@ -9,14 +9,15 @@ class App extends React.Component {
 
     this.state = {
       theme: "light",
-      conversions: 0
+      conversions: 0,
+      isPremiun: false
     };
   }
 
   componentDidUpdate() {
-    if (this.state.conversions > 5) {
+    if (!this.state.isPremiun && this.state.conversions > 5) {
       alert(
-        "👋 Hello, thanks for trying out LF Converter. \nBecome premium 💎 for unlimited conversions."
+        "👋 Hello, thanks for trying out Boton Converter. \nBecome premium 💎 for unlimited conversions."
       );
     }
   }
@@ -32,7 +33,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { theme } = this.state;
+    const { theme, isPremiun } = this.state;
 
     return (
       <ThemeContext.Provider value={theme}>
@@ -65,6 +66,26 @@ class App extends React.Component {
             onChange={this.handleConversion}
             renderTitle={() => <h1>TRON</h1>}
           />
+          <footer>
+            {isPremiun ? (
+              <div>
+                <span role="img" aria-label="Diamonds">
+                  💎💎💎
+                </span>
+                Proudly menber of Boton Converter
+                <span role="img" aria-label="Diamonds">
+                  💎💎💎
+                </span>
+              </div>
+            ) : (
+              <button onClick={() => this.setState({ isPremiun: true })}>
+                <span role="img" aria-label="Money">
+                  💵
+                </span>
+                Premium conversion
+              </button>
+            )}
+          </footer>
         </div>
       </ThemeContext.Provider>
     );
