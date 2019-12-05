@@ -15,13 +15,13 @@ export default class Converter extends React.Component {
 
   static defaultProps = {
     cryptoName: "$BTC",
-    exchangeRate: Math.random() * 10000
+    exchangeRate: Math.random() * 10000,
+    onChange: () => {}
   };
 
   handleChangeValue = event => {
-    this.setState({
-      value: event.target.value,
-      exchangeRate: this.props.exchangeRate
+    this.setState({ value: event.target.value }, () => {
+      this.props.onChange(this.state.value);
     });
   };
 
