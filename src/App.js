@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Converter from "./Converter";
-import ThemeContext from "./ThemeContext";
+import ConverterContext from "./ConverterContext";
 
 class App extends React.Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class App extends React.Component {
     const { theme, isPremiun } = this.state;
 
     return (
-      <ThemeContext.Provider value={theme}>
+      <ConverterContext.Provider value={{ theme }}>
         <div className={`App ${theme || ""}`}>
           <div>
             <label htmlFor="theme">
@@ -87,7 +87,7 @@ class App extends React.Component {
             )}
           </footer>
         </div>
-      </ThemeContext.Provider>
+      </ConverterContext.Provider>
     );
   }
 }
