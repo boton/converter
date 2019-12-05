@@ -1,28 +1,22 @@
 import React from "react";
 
 export class Amount extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { amount: props.amount };
-  }
-
-  handleChange = event => {
-    this.setState({ amount: event.target.value });
+  static defaultProps = {
+    onChange: () => {}
   };
 
   render() {
-    const { readOnly, label } = this.props;
-    const { amount } = this.state;
+    const { readOnly, label, value, onChange } = this.props;
 
     return (
       <label>
         {label}:
         <input
-          className={amount < 0 ? "error" : ""}
-          type="number"
-          onChange={this.handleChange}
-          value={amount}
+          className={value < 0 ? "error" : ""}
+          onChange={onChange}
           readOnly={readOnly}
+          type="number"
+          value={value}
         />
       </label>
     );
