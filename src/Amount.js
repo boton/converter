@@ -1,4 +1,5 @@
 import React from "react";
+import "./Amount.css";
 import ThemeContext from "./ThemeContext";
 
 export class Amount extends React.Component {
