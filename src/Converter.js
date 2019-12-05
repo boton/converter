@@ -1,6 +1,6 @@
-import React from "react";
-import "./App.css";
-import { Amount } from "./Amount";
+import React from 'react';
+import './App.css';
+import { Amount } from './Amount';
 
 export default class Converter extends React.Component {
   constructor(props) {
@@ -9,14 +9,14 @@ export default class Converter extends React.Component {
     this.state = {
       cryptoName: props.cryptoName,
       exchangeRate: props.exchangeRate,
-      value: 0
+      value: 0,
     };
   }
 
   static defaultProps = {
-    cryptoName: "$BTC",
+    cryptoName: '$BTC',
     exchangeRate: Math.random() * 10000,
-    onChange: () => {}
+    onChange: () => {},
   };
 
   handleChangeValue = event => {

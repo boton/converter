@@ -1,10 +1,10 @@
-import React from "react";
-import "./Amount.css";
-import ConverterContext from "./ConverterContext";
+import React from 'react';
+import './Amount.css';
+import ConverterContext from './ConverterContext';
 
 export class Amount extends React.Component {
   static defaultProps = {
-    onChange: () => {}
+    onChange: () => {},
   };
 
   static contextType = ConverterContext;
@@ -15,9 +15,9 @@ export class Amount extends React.Component {
 
     return (
       <label>
-        {label}:{" "}
+        {label}:{' '}
         <input
-          className={`${value < 0 ? "error" : ""} ${theme || ""}`}
+          className={`${value < 0 ? 'error' : ''} ${theme || ''}`}
           onChange={onChange}
           readOnly={readOnly}
           type="number"

@@ -1,30 +1,30 @@
-import React from "react";
-import "./App.css";
-import Converter from "./Converter";
-import ConverterContext from "./ConverterContext";
+import React from 'react';
+import './App.css';
+import Converter from './Converter';
+import ConverterContext from './ConverterContext';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      theme: "light",
+      theme: 'light',
       conversions: 0,
-      isPremiun: false
+      isPremiun: false,
     };
   }
 
   componentDidUpdate() {
     if (!this.state.isPremiun && this.state.conversions > 5) {
       alert(
-        "👋 Hello, thanks for trying out Boton Converter. \nBecome premium 💎 for unlimited conversions."
+        '👋 Hello, thanks for trying out Boton Converter. \nBecome premium 💎 for unlimited conversions.'
       );
     }
   }
 
   handleChangeTheme = event => {
     this.setState({
-      theme: event.target.checked ? "light" : "dark"
+      theme: event.target.checked ? 'light' : 'dark',
     });
   };
 
@@ -37,14 +37,14 @@ class App extends React.Component {
 
     return (
       <ConverterContext.Provider value={{ theme }}>
-        <div className={`App ${theme || ""}`}>
+        <div className={`App ${theme || ''}`}>
           <div>
             <label htmlFor="theme">
               <input
                 type="checkbox"
                 name="theme"
                 id="theme"
-                checked={this.state.theme === "light"}
+                checked={this.state.theme === 'light'}
                 onChange={this.handleChangeTheme}
               />
               light theme
