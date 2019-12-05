@@ -9,7 +9,7 @@ export default class Converter extends React.Component {
     this.state = {
       cryptoName: props.cryptoName,
       exchangeRate: props.exchangeRate,
-      value: 20
+      value: 0
     };
   }
 
@@ -26,11 +26,12 @@ export default class Converter extends React.Component {
   };
 
   render() {
-    const { cryptoName } = this.props;
+    const { cryptoName, renderTitle } = this.props;
     const { value, exchangeRate } = this.state;
 
     return (
       <>
+        {renderTitle && renderTitle()}
         <Amount value={value} label="Euros" onChange={this.handleChangeValue} />
         <Amount
           value={(value * exchangeRate).toFixed(4)}

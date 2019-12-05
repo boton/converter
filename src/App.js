@@ -36,8 +36,17 @@ class App extends React.Component {
               light theme
             </label>
           </div>
-          <Converter />
-          <Converter cryptoName="$ETH" exchangeRate={1.2} />
+          <Converter renderTitle={() => <h1>Bitcoin</h1>} />
+          <Converter
+            cryptoName="$ETH"
+            exchangeRate={1.2}
+            renderTitle={() => <h1>Ethereum</h1>}
+          />
+          <Converter
+            cryptoName="$TRX"
+            exchangeRate={0.014698}
+            renderTitle={() => <h1>TRON</h1>}
+          />
         </div>
       </ThemeContext.Provider>
     );
