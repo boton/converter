@@ -22,6 +22,10 @@ class App extends React.Component {
     this.resetTimeout();
   }
 
+  componentWillUnmount() {
+    clearTimeout(this._inactivityTimer);
+  }
+
   handleChangeEuros = event => {
     this.setState({
       euros: event.target.value,
@@ -70,7 +74,11 @@ class App extends React.Component {
             label="Euros"
             onChange={this.handleChangeEuros}
           />
-          <Amount value={euros * exchangeRate} label="$BTC" readOnly />
+          <Amount
+            value={(euros * exchangeRate).toFixed(4)}
+            label="$BTC"
+            readOnly
+          />
         </div>
       </ThemeContext.Provider>
     );
