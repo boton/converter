@@ -1,28 +1,42 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
 .App {
+  min-height: calc(100vh - 8rem);
   text-align: center;
-  padding: 4em;
+  padding: 4rem;
 }
 
-.App-logo {
-  height: 40vmin;
+.App.dark {
+  background-color: #000;
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+label {
+  display: block;
+  margin: 0.5rem auto;
 }
 
-.App-link {
-  color: #09d3ac;
+input[type="number"] {
+  font-size: inherit;
+  appearance: none;
+  padding: 0.5rem 0.75rem;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  box-sizing: border-box;
+  outline: none;
 }
 
-.error {
+input.error {
   border: 1px solid red;
-  outline: 3px solid plum;
+}
+
+input.dark {
+  background-color: #000;
+  color: #fff;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Amount } from "./Amount";
+import ThemeContext from "./ThemeContext";
 
 const INACTIVITY_MS = 5000;
 
@@ -14,19 +15,26 @@ class App extends React.Component {
 
     this.state = {
       euros: 20,
-      exchangeRate: exchangeRate()
+      exchangeRate: exchangeRate(),
+      theme: "light"
     };
 
     this.resetTimeout();
   }
 
-  handleChange = event => {
+  handleChangeEuros = event => {
     this.setState({
       euros: event.target.value,
       exchangeRate: exchangeRate()
     });
 
     this.resetTimeout();
+  };
+
+  handleChangeTheme = event => {
+    this.setState({
+      theme: event.target.checked ? "light" : "dark"
+    });
   };
 
   resetTimeout = () => {
@@ -40,14 +48,31 @@ class App extends React.Component {
   };
 
   render() {
-    const { euros, exchangeRate } = this.state;
+    const { euros, exchangeRate, theme } = this.state;
 
     return (
-      <div className="App">
-        <Amount value={euros} label="Euros" onChange={this.handleChange} />
-        <br />
-        <Amount value={euros * exchangeRate} label="$BTC" readOnly />
-      </div>
+      <ThemeContext.Provider value={theme}>
+        <div className={`App ${theme || ""}`}>
+          <div>
+            <label htmlFor="theme">
+              <input
+                type="checkbox"
+                name="theme"
+                id="theme"
+                checked={this.state.theme === "light"}
+                onChange={this.handleChangeTheme}
+              />
+              light theme
+            </label>
+          </div>
+          <Amount
+            value={euros}
+            label="Euros"
+            onChange={this.handleChangeEuros}
+          />
+          <Amount value={euros * exchangeRate} label="$BTC" readOnly />
+        </div>
+      </ThemeContext.Provider>
     );
   }
 }
