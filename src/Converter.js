@@ -30,7 +30,7 @@ export default class Converter extends React.Component {
     const { value, exchangeRate } = this.state;
 
     return (
-      <>
+      <div>
         {renderTitle && renderTitle()}
         <Amount value={value} label="Euros" onChange={this.handleChangeValue} />
         <Amount
@@ -38,7 +38,7 @@ export default class Converter extends React.Component {
           label={cryptoName}
           readOnly
         />
-      </>
+      </div>
     );
   }
 }

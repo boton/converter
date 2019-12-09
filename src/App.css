@@ -8,3 +8,48 @@
   background-color: #000;
   color: #fff;
 }
+
+h1 {
+  font-weight: 400;
+  margin: 1rem auto 0.5rem;
+  text-transform: uppercase;
+}
+
+label {
+  font-size: 0.725rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+footer {
+  font-size: 0.725rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button,
+.dark button:hover {
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: 4px;
+  color: #555;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.725rem;
+  font-weight: 600;
+  line-height: 4;
+  padding: 0 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all ease-in-out 300ms;
+}
+
+/* stylelint-disable no-descending-specificity */
+button:hover,
+.dark button {
+  /* stylelint-enable no-descending-specificity */
+  background-color: #000;
+  color: #ddd;
+}
