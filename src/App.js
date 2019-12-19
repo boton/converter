@@ -1,4 +1,5 @@
 import React from 'react';
+import { Btc, Eth, Neo } from 'react-cryptocoins';
 import './App.css';
 import Converter from './Converter';
 import ConverterContext from './ConverterContext';
@@ -52,19 +53,31 @@ class App extends React.Component {
           </div>
           <Converter
             onChange={this.handleConversion}
-            renderTitle={() => <h1>Bitcoin</h1>}
+            renderTitle={() => (
+              <h1>
+                <Btc /> Bitcoin
+              </h1>
+            )}
           />
           <Converter
             cryptoName="$ETH"
             exchangeRate={1.2}
             onChange={this.handleConversion}
-            renderTitle={() => <h1>Ethereum</h1>}
+            renderTitle={() => (
+              <h1>
+                <Eth /> Ethereum
+              </h1>
+            )}
           />
           <Converter
-            cryptoName="$TRX"
+            cryptoName="$NEO"
             exchangeRate={0.014698}
             onChange={this.handleConversion}
-            renderTitle={() => <h1>TRON</h1>}
+            renderTitle={() => (
+              <h1>
+                <Neo /> NEO
+              </h1>
+            )}
           />
           <footer>
             {isPremiun ? (

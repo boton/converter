@@ -8848,6 +8848,11 @@ react-app-polyfill@^1.0.4:
     regenerator-runtime "0.13.3"
     whatwg-fetch "3.0.0"
 
+react-cryptocoins@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/react-cryptocoins/-/react-cryptocoins-1.0.11.tgz#c2f3ea9303538fba9179bc39e4ecb237f7b5f589"
+  integrity sha512-9HAqYA718bBcYYtGPLPOtlAAQZn/fSgLxxfX5RIYN+XZkZC7wDU1UV+hHoj9/D35zOAWxZyuJKK3g3haZtZSiA==
+
 react-dev-utils@^9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-9.1.0.tgz#3ad2bb8848a32319d760d0a84c56c14bdaae5e81"
