@@ -3,7 +3,7 @@ label {
   margin: 0.5rem auto;
 }
 
-input[type="number"] {
+input[type='number'] {
   appearance: none;
   background-color: #fff;
   border: 1px solid #d1d1d1;
@@ -17,6 +17,11 @@ input[type="number"] {
 
 input.error {
   border: 1px solid red;
+}
+
+input:read-only,
+input.error:read-only {
+  border-color: transparent;
 }
 
 input.dark {
